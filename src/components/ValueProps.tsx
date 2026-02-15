@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Zap, ShieldCheck, Headset } from 'lucide-react'
+import { Zap, ShieldCheck, Headset, Scale } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 
 const cards = [
@@ -26,6 +26,14 @@ const cards = [
     badgeKey: 'values.management.badge' as const,
     color: 'text-emerald-600',
     bg: 'bg-emerald-50',
+  },
+  {
+    icon: Scale,
+    titleKey: 'values.legal.title' as const,
+    descKey: 'values.legal.desc' as const,
+    badgeKey: 'values.legal.badge' as const,
+    color: 'text-purple-600',
+    bg: 'bg-purple-50',
   },
 ]
 
@@ -58,7 +66,7 @@ export default function ValueProps() {
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

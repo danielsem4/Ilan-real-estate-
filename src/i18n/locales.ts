@@ -35,6 +35,22 @@ const translations = {
     'values.management.title': 'ניהול רציף',
     'values.management.desc': 'צוות ניהול זמין 24/7 לכל בעיה, תקלה או בקשה, תמיד כאן בשבילכם.',
     'values.management.badge': '24/7',
+    'values.legal.title': 'גב משפטי מקצועי',
+    'values.legal.desc': 'בעלי החברה הינו עו"ד משנת 2024, מומחה במיסוי ונדל"ן, המבטיח לכם הגנה משפטית ושקיפות מלאה.',
+    'values.legal.badge': 'עו"ד מוסמך',
+
+    // FAQ
+    'faq.title': 'שאלות ותשובות',
+    'faq.coverage.q': 'האם אתם מכסים את כל אזורי הארץ?',
+    'faq.coverage.a': 'בהחלט. אנחנו מציעים פריסה ארצית מלאה, עם דגש חזק וזמינות גבוהה באזורי הביקוש במרכז, בשפלה ובדרום.',
+    'faq.temporary.q': 'האם יש פתרונות גם לעובדים זמניים או עונתיים?',
+    'faq.temporary.a': 'בוודאי. בנינו מסלולים ייעודיים לעובדים עונתיים עם תנאי שכירות גמישים המותאמים לדינמיקה של פרויקטים קצרי טווח.',
+    'faq.legal.q': 'מה היתרון בכך שבעלי החברה הוא עורך דין?',
+    'faq.legal.a': 'הערך המוסף הוא שקט נפשי מלא. כל החוזים נערכים ומפוקחים ע"י עו"ד מומחה לנדל"ן ומיסוי, מה שמבטיח הגנה משפטית מלאה, עמידה קפדנית בתקנות המגורים ההולמים ומניעת סיכונים בירוקרטיים למעסיק.',
+    'faq.maintenance.q': 'מי דואג לתקלות או בעיות בנכס?',
+    'faq.maintenance.a': 'אנחנו לוקחים אחריות מלאה. הניהול שלנו כולל מענה שוטף לתקלות ותחזוקה, כך שהעובדים שלכם נהנים מתנאים מעולים ואתם לא צריכים להתעסק בלוגיסטיקה יומיומית.',
+    'faq.regulation.q': 'האם הדירות עומדות בתקני המגורים לעובדים זרים?',
+    'faq.regulation.a': 'חד משמעית. כל נכס נבחר בקפידה ועובר בדיקה משפטית ותכנונית כדי להבטיח עמידה מלאה בתקנות המגורים ההולמים בחוק.',
 
     // Process
     'process.title': 'תהליך העבודה שלנו',
@@ -81,6 +97,22 @@ const translations = {
     'values.management.title': 'Continuous Management',
     'values.management.desc': 'Our management team is available 24/7 for any issue, malfunction, or request — always here for you.',
     'values.management.badge': '24/7',
+    'values.legal.title': 'Expert Legal Backing',
+    'values.legal.desc': 'Owned by a licensed Attorney since 2024, specializing in Tax and Real Estate law, ensuring full legal protection and transparency.',
+    'values.legal.badge': 'Legal Expert',
+
+    // FAQ
+    'faq.title': 'FAQ',
+    'faq.coverage.q': 'Do you cover all areas of the country?',
+    'faq.coverage.a': 'Absolutely. We offer full nationwide coverage, with high availability in high-demand areas in Central Israel, the Shfela, and the South.',
+    'faq.temporary.q': 'Do you provide solutions for temporary or seasonal workers?',
+    'faq.temporary.a': 'Definitely. We have dedicated programs for seasonal workers with flexible lease terms tailored to short-term project dynamics.',
+    'faq.legal.q': 'What is the advantage of the company being owned by an attorney?',
+    'faq.legal.a': 'The added value is total peace of mind. All contracts are drafted and supervised by a Real Estate and Tax attorney, ensuring full legal protection, strict compliance with housing regulations, and the elimination of bureaucratic risks for the employer.',
+    'faq.maintenance.q': 'Who handles maintenance issues in the properties?',
+    'faq.maintenance.a': 'We take full responsibility. Our management includes ongoing maintenance and repair services, ensuring your employees have excellent conditions without you needing to handle daily logistics.',
+    'faq.regulation.q': 'Do the apartments meet workforce housing regulations?',
+    'faq.regulation.a': 'Categorically yes. Every property is carefully selected and undergoes legal and structural inspection to ensure full compliance with the law.',
 
     // Process
     'process.title': 'Our Process',
@@ -127,6 +159,22 @@ const translations = {
     'values.management.title': 'Непрерывное управление',
     'values.management.desc': 'Наша команда доступна 24/7 для решения любых вопросов — мы всегда рядом.',
     'values.management.badge': '24/7',
+    'values.legal.title': 'Профессиональная юридическая поддержка',
+    'values.legal.desc': 'Владелец компании — адвокат с 2024 года, эксперт в области налогообложения и недвижимости, что гарантирует вам юридическую защиту.',
+    'values.legal.badge': 'Адвокат',
+
+    // FAQ
+    'faq.title': 'Вопросы и ответы',
+    'faq.coverage.q': 'Охватываете ли вы все районы страны?',
+    'faq.coverage.a': 'Безусловно. Мы предлагаем полное покрытие по всей стране, с высокой доступностью в центральных районах, Шфеле и на юге.',
+    'faq.temporary.q': 'Предоставляете ли вы решения для временных или сезонных работников?',
+    'faq.temporary.a': 'Конечно. У нас есть специальные программы для сезонных рабочих с гибкими условиями аренды, адаптированными к краткосрочным проектам.',
+    'faq.legal.q': 'В чем преимущество того, что владелец компании — адвокат?',
+    'faq.legal.a': 'Это дает вам полное спокойствие. Все договоры составляются и контролируются адвокатом по недвижимости и налогообложению, что гарантирует юридическую защиту и соответствие всем государственным стандартам.',
+    'faq.maintenance.q': 'Кто занимается обслуживанием объектов?',
+    'faq.maintenance.a': 'Мы берем на себя полную ответственность. Наше управление включает оперативное решение любых бытовых проблем, чтобы вы могли не отвлекаться на логистику.',
+    'faq.regulation.q': 'Соответствуют ли квартиры стандартам проживания иностранных рабочих?',
+    'faq.regulation.a': 'Однозначно да. Каждый объект проходит тщательную проверку на соответствие законодательным нормам Израиля.',
 
     // Process
     'process.title': 'Наш процесс',
