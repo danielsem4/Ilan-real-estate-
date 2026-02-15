@@ -6,7 +6,7 @@ const draw = {
     pathLength: 1,
     opacity: 1,
     transition: {
-      pathLength: { delay: i * 0.3, duration: 1.2, ease: 'easeInOut' },
+      pathLength: { delay: i * 0.3, duration: 1.2, ease: "easeInOut" as const },
       opacity: { delay: i * 0.3, duration: 0.3 },
     },
   }),
@@ -169,7 +169,7 @@ export default function HouseAnimation() {
           duration: 3,
           repeat: Infinity,
           delay: 5,
-          ease: 'easeOut',
+          ease: "easeOut" as const,
         }}
       />
       <motion.circle
@@ -185,7 +185,7 @@ export default function HouseAnimation() {
           duration: 3.5,
           repeat: Infinity,
           delay: 6,
-          ease: 'easeOut',
+          ease: "easeOut" as const,
         }}
       />
 
