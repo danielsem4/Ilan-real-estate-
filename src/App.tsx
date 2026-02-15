@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ValueProps from './components/ValueProps'
 import Process from './components/Process'
+import FAQ from './components/FAQ'
 import ContactFooter from './components/ContactFooter'
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
         <Hero />
         <ValueProps />
         <Process />
+        <FAQ />
       </main>
       <ContactFooter />
     </div>

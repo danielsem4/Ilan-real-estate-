@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Menu,
@@ -18,11 +18,30 @@ const navLinks = [
 ]
 
 export default function Navbar() {
-  const { t, language, setLanguage } = useLanguage()
+  const { t, language, setLanguage, isRtl } = useLanguage()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
+  const langRef = useRef<HTMLDivElement>(null)
 
   const languages: Language[] = ['he', 'en', 'ru']
+
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileOpen])
+
+  // Close desktop language dropdown on outside click
+  useEffect(() => {
+    if (!langOpen) return
+    const handler = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [langOpen])
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-navy-100 shadow-sm">
@@ -46,7 +65,7 @@ export default function Navbar() {
             ))}
 
             {/* Language dropdown */}
-            <div className="relative">
+            <div className="relative" ref={langRef}>
               <button
                 onClick={() => setLangOpen(!langOpen)}
                 className="flex items-center gap-1.5 text-navy-600 hover:text-amber-600 transition-colors min-h-[44px] px-2 cursor-pointer"
@@ -127,14 +146,14 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
             />
             <motion.div
-              initial={{ x: language === 'he' ? '100%' : '-100%' }}
+              initial={{ x: isRtl ? '-0%' : '100%' }}
               animate={{ x: 0 }}
-              exit={{ x: language === 'he' ? '100%' : '-100%' }}
+              exit={{ x: isRtl ? '-100%' : '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="fixed top-0 end-0 bottom-0 w-72 bg-white z-50 shadow-2xl md:hidden flex flex-col"
+              className="fixed top-0 end-0 bottom-0 w-72 bg-white z-50 shadow-2xl md:hidden flex flex-col h-screen"
             >
               <div className="flex items-center justify-between px-4 h-16 border-b border-navy-100">
-                <span className="font-bold text-navy-700">{t('nav.logo')}</span>
+
                 <button
                   onClick={() => setMobileOpen(false)}
                   className="w-11 h-11 flex items-center justify-center cursor-pointer"
