@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { PhoneCall, ArrowDown } from 'lucide-react'
+import { PhoneCall } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 import HouseAnimation from './HouseAnimation'
 
@@ -34,13 +34,6 @@ export default function Hero() {
               >
                 <PhoneCall size={20} />
                 {t('hero.cta')}
-              </a>
-              <a
-                href="#services"
-                className="inline-flex items-center gap-2 border-2 border-navy-200 hover:border-navy-400 text-navy-600 font-semibold px-8 py-4 rounded-xl transition-colors min-h-[52px] text-base"
-              >
-                {t('hero.ctaSecondary')}
-                <ArrowDown size={18} />
               </a>
             </div>
           </motion.div>
