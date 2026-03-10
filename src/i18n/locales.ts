@@ -27,7 +27,7 @@ const translations = {
     // Value Props
     'values.title': 'למה לבחור בנו?',
     'values.speed.title': 'מהירות ביצוע',
-    'values.speed.desc': 'איכלוס באופן מידי מהיום',
+    'values.speed.desc': 'איכלוס באופן מידי מהיום להיום',
     'values.speed.badge': 'מהירות',
     'values.compliance.title': 'עמידה בתקנים',
     'values.compliance.desc': 'כל הנכסים עומדים בדרישות הרגולציה ובתקני הבטיחות המחמירים ביותר.',
