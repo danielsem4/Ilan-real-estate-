@@ -20,24 +20,24 @@ const translations = {
 
     // Hero
     'hero.title': 'הכתובת שלכם למגורי עובדים בישראל',
-    'hero.subtitle': 'אילן תורן ניהול נכסים מנהלת מאות דירות עבור החברות המובילות במשק. פתרונות איכותיים, עמידה בתקנים ושירותי לוגיסטיקה, הכל תחת קורת גג אחת.',
+    'hero.subtitle': 'אילן תורן ניהול נכסים מנהלים מאות דירות עבור החברות המובילות במשק. פתרונות איכותיים, עמידה בתקנים ושירותי לוגיסטיקה, הכל תחת קורת גג אחת.',
     'hero.cta': 'לשיחת ייעוץ חינם',
     'hero.ctaSecondary': 'למדו עוד',
 
     // Value Props
     'values.title': 'למה לבחור בנו?',
     'values.speed.title': 'מהירות ביצוע',
-    'values.speed.desc': 'אכלוס תוך מספר ימים,  אנחנו מבינים שזמן זה כסף ופועלים בהתאם.',
+    'values.speed.desc': 'איכלוס באופן מידי מהיום',
     'values.speed.badge': 'מהירות',
     'values.compliance.title': 'עמידה בתקנים',
     'values.compliance.desc': 'כל הנכסים עומדים בדרישות הרגולציה ובתקני הבטיחות המחמירים ביותר.',
-    'values.compliance.badge': 'מוסמך',
+    'values.compliance.badge': 'עמידה בתקנים',
     'values.management.title': 'ניהול רציף',
     'values.management.desc': 'צוות ניהול זמין 24/7 לכל בעיה, תקלה או בקשה, תמיד כאן בשבילכם.',
     'values.management.badge': '24/7',
     'values.legal.title': 'גב משפטי מקצועי',
-    'values.legal.desc': 'בעלי החברה הינו עו"ד משנת 2024, מומחה במיסוי ונדל"ן, המבטיח לכם הגנה משפטית ושקיפות מלאה.',
-    'values.legal.badge': 'עו"ד מוסמך',
+    'values.legal.desc': 'בעל החברה הינו עורך דין מוסמך, מומחה במיסוי ונדל״ן',
+    'values.legal.badge': 'הבנה משפטית',
 
     // FAQ
     'faq.title': 'שאלות ותשובות',
@@ -46,11 +46,13 @@ const translations = {
     'faq.temporary.q': 'האם יש פתרונות גם לעובדים זמניים או עונתיים?',
     'faq.temporary.a': 'בוודאי. בנינו מסלולים ייעודיים לעובדים עונתיים עם תנאי שכירות גמישים המותאמים לדינמיקה של פרויקטים קצרי טווח.',
     'faq.legal.q': 'מה היתרון בכך שבעלי החברה הוא עורך דין?',
-    'faq.legal.a': 'הערך המוסף הוא שקט נפשי מלא. כל החוזים נערכים ומפוקחים ע"י עו"ד מומחה לנדל"ן ומיסוי, מה שמבטיח הגנה משפטית מלאה, עמידה קפדנית בתקנות המגורים ההולמים ומניעת סיכונים בירוקרטיים למעסיק.',
+    'faq.legal.a': 'הערך המוסף הוא שקט נפשי מלא. כל החוזים נערכים ומפוקחים ע"י עו"ד מומחה לנדל"ן ומיסוי, מה שמבטיח , עמידה קפדנית בתקנות המגורים ההולמים ומניעת סיכונים בירוקרטיים למעסיק.',
     'faq.maintenance.q': 'מי דואג לתקלות או בעיות בנכס?',
     'faq.maintenance.a': 'אנחנו לוקחים אחריות מלאה. הניהול שלנו כולל מענה שוטף לתקלות ותחזוקה, כך שהעובדים שלכם נהנים מתנאים מעולים ואתם לא צריכים להתעסק בלוגיסטיקה יומיומית.',
     'faq.regulation.q': 'האם הדירות עומדות בתקני המגורים לעובדים זרים?',
     'faq.regulation.a': 'חד משמעית. כל נכס נבחר בקפידה ועובר בדיקה משפטית ותכנונית כדי להבטיח עמידה מלאה בתקנות המגורים ההולמים בחוק.',
+    'faq.owner.q': 'למה כדאי לי בתור בעל נכס להשכיר לכם את הדירה שלי?',
+    'faq.owner.a': 'אנו מתחייבים לשמור על הדירה בצורה מעולה, ולהחזירה באותו מצב כפי שהייתה טרם ההשכרה, כמו כן אנו מאפשרים לבעלי דירות המעוניינים בכך חוזים עם אופציות לפינוי מהיר של הדירה ובכך ממזערים כל סיכון שיכול לגרום לאי שביעות רצון.',
 
     // Process
     'process.title': 'תהליך העבודה שלנו',
@@ -89,8 +91,8 @@ const translations = {
     // Value Props
     'values.title': 'Why Choose Us?',
     'values.speed.title': 'Fast Execution',
-    'values.speed.desc': 'Occupancy within 48 hours — we understand that time is money and act accordingly.',
-    'values.speed.badge': '48 Hours',
+    'values.speed.desc': 'Immediate occupancy — available from today.',
+    'values.speed.badge': 'Speed',
     'values.compliance.title': 'Full Compliance',
     'values.compliance.desc': 'All properties meet the strictest regulatory requirements and safety standards.',
     'values.compliance.badge': 'Certified',
@@ -113,6 +115,8 @@ const translations = {
     'faq.maintenance.a': 'We take full responsibility. Our management includes ongoing maintenance and repair services, ensuring your employees have excellent conditions without you needing to handle daily logistics.',
     'faq.regulation.q': 'Do the apartments meet workforce housing regulations?',
     'faq.regulation.a': 'Categorically yes. Every property is carefully selected and undergoes legal and structural inspection to ensure full compliance with the law.',
+    'faq.owner.q': 'Why should I, as a property owner, rent my apartment to you?',
+    'faq.owner.a': 'We commit to maintaining the apartment in excellent condition and returning it in the same state as before the rental. We also offer property owners who wish for it contracts with quick eviction options, thereby minimizing any risk that could lead to dissatisfaction.',
 
     // Process
     'process.title': 'Our Process',
@@ -151,8 +155,8 @@ const translations = {
     // Value Props
     'values.title': 'Почему мы?',
     'values.speed.title': 'Быстрое выполнение',
-    'values.speed.desc': 'Заселение в течение 48 часов — мы понимаем, что время — деньги.',
-    'values.speed.badge': '48 часов',
+    'values.speed.desc': 'Немедленное заселение — доступно уже сегодня.',
+    'values.speed.badge': 'Скорость',
     'values.compliance.title': 'Полное соответствие',
     'values.compliance.desc': 'Все объекты соответствуют строжайшим нормативным требованиям и стандартам безопасности.',
     'values.compliance.badge': 'Сертиф.',
@@ -175,6 +179,8 @@ const translations = {
     'faq.maintenance.a': 'Мы берем на себя полную ответственность. Наше управление включает оперативное решение любых бытовых проблем, чтобы вы могли не отвлекаться на логистику.',
     'faq.regulation.q': 'Соответствуют ли квартиры стандартам проживания иностранных рабочих?',
     'faq.regulation.a': 'Однозначно да. Каждый объект проходит тщательную проверку на соответствие законодательным нормам Израиля.',
+    'faq.owner.q': 'Почему мне, как владельцу недвижимости, стоит сдать вам свою квартиру?',
+    'faq.owner.a': 'Мы обязуемся поддерживать квартиру в отличном состоянии и вернуть её в том же виде, что и до аренды. Мы также предлагаем владельцам, которые этого желают, договоры с возможностью быстрого выселения, тем самым минимизируя любые риски, которые могут привести к неудовлетворённости.',
 
     // Process
     'process.title': 'Наш процесс',

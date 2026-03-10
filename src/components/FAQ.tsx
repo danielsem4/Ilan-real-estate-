@@ -9,6 +9,7 @@ const items = [
   { qKey: 'faq.legal.q' as const, aKey: 'faq.legal.a' as const },
   { qKey: 'faq.maintenance.q' as const, aKey: 'faq.maintenance.a' as const },
   { qKey: 'faq.regulation.q' as const, aKey: 'faq.regulation.a' as const },
+  { qKey: 'faq.owner.q' as const, aKey: 'faq.owner.a' as const },
 ]
 
 export default function FAQ() {
