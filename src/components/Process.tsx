@@ -46,11 +46,11 @@ export default function Process() {
         </motion.h2>
 
         {/* Mobile: vertical list */}
-        <div className="flex flex-col gap-6 md:hidden">
+        <ol className="flex flex-col gap-6 md:hidden list-none">
           {steps.map((step, i) => {
             const Icon = step.icon
             return (
-              <motion.div
+              <motion.li
                 key={step.num}
                 className="flex gap-4 items-start"
                 initial={{ opacity: 0, x: -20 }}
@@ -58,7 +58,7 @@ export default function Process() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                <div className="flex flex-col items-center shrink-0">
+                <div className="flex flex-col items-center shrink-0" aria-hidden="true">
                   <div className="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-lg">
                     {step.num}
                   </div>
@@ -68,20 +68,20 @@ export default function Process() {
                 </div>
                 <div className="pt-1.5">
                   <div className="flex items-center gap-2 mb-1">
-                    <Icon size={18} className="text-navy-600" />
+                    <Icon size={18} aria-hidden="true" className="text-navy-600" />
                     <h3 className="font-bold text-navy-800">{t(step.titleKey)}</h3>
                   </div>
                   <p className="text-navy-500 text-sm leading-relaxed">{t(step.descKey)}</p>
                 </div>
-              </motion.div>
+              </motion.li>
             )
           })}
-        </div>
+        </ol>
 
         {/* Desktop: horizontal timeline */}
         <div className="hidden md:block">
-          {/* Timeline bar */}
-          <div className="relative">
+          {/* Timeline bar — decorative */}
+          <div className="relative" aria-hidden="true">
             <div className="absolute top-6 start-[12.5%] end-[12.5%] h-1 bg-navy-200 rounded-full" />
             <motion.div
               className="absolute top-6 start-[12.5%] h-1 bg-amber-500 rounded-full"
@@ -92,11 +92,11 @@ export default function Process() {
             />
           </div>
 
-          <div className="grid grid-cols-4 gap-8 relative">
+          <ol className="grid grid-cols-4 gap-8 relative list-none">
             {steps.map((step, i) => {
               const Icon = step.icon
               return (
-                <motion.div
+                <motion.li
                   key={step.num}
                   className="flex flex-col items-center text-center"
                   initial={{ opacity: 0, y: 30 }}
@@ -104,22 +104,22 @@ export default function Process() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.15 + 0.2 }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-amber-500/25 relative z-10">
+                  <div aria-hidden="true" className="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-amber-500/25 relative z-10">
                     {step.num}
                   </div>
                   <div className="mt-6">
                     <div className="flex items-center justify-center gap-2 mb-2">
-                      <Icon size={20} className="text-navy-600" />
+                      <Icon size={20} aria-hidden="true" className="text-navy-600" />
                       <h3 className="font-bold text-navy-800 text-lg">{t(step.titleKey)}</h3>
                     </div>
                     <p className="text-navy-500 text-sm leading-relaxed max-w-[220px] mx-auto">
                       {t(step.descKey)}
                     </p>
                   </div>
-                </motion.div>
+                </motion.li>
               )
             })}
-          </div>
+          </ol>
         </div>
       </div>
     </section>

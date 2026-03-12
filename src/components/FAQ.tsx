@@ -34,6 +34,8 @@ export default function FAQ() {
         <div className="space-y-3">
           {items.map((item, i) => {
             const isOpen = openIndex === i
+            const panelId = `faq-panel-${i}`
+            const headingId = `faq-heading-${i}`
             return (
               <motion.div
                 key={item.qKey}
@@ -43,22 +45,30 @@ export default function FAQ() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="bg-white border border-navy-100 rounded-xl overflow-hidden"
               >
-                <button
-                  onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between gap-4 px-5 py-4 text-start cursor-pointer"
-                >
-                  <span className="font-semibold text-navy-800">
-                    {t(item.qKey)}
-                  </span>
-                  <ChevronDown
-                    size={20}
-                    className={`shrink-0 text-navy-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-                  />
-                </button>
+                <h3 id={headingId}>
+                  <button
+                    onClick={() => toggle(i)}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    className="w-full flex items-center justify-between gap-4 px-5 py-4 text-start cursor-pointer"
+                  >
+                    <span className="font-semibold text-navy-800">
+                      {t(item.qKey)}
+                    </span>
+                    <ChevronDown
+                      size={20}
+                      aria-hidden="true"
+                      className={`shrink-0 text-navy-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                </h3>
 
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={headingId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

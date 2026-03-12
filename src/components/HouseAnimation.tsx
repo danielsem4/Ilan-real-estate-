@@ -27,6 +27,8 @@ export default function HouseAnimation() {
       className="w-full max-w-sm mx-auto md:max-w-md"
       initial="hidden"
       animate="visible"
+      aria-hidden="true"
+      focusable="false"
     >
       {/* Ground line */}
       <motion.line

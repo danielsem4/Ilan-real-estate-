@@ -71,6 +71,19 @@ const translations = {
     'contact.phone': '052-2056000',
     'contact.whatsapp': 'שלחו הודעת WhatsApp',
     'contact.copyright': '© 2026 אילן ניהול נכסים. כל הזכויות שמורות.',
+
+    // Accessibility widget
+    'a11y.open': 'פתח אפשרויות נגישות',
+    'a11y.close': 'סגור לוח נגישות',
+    'a11y.title': 'נגישות',
+    'a11y.textSize': 'גודל טקסט',
+    'a11y.highContrast': 'ניגודיות גבוהה',
+    'a11y.grayscale': 'גווני אפור',
+    'a11y.underlineLinks': 'הדגשת קישורים',
+    'a11y.pauseAnimations': 'עצור אנימציות',
+    'a11y.reset': 'אפס הכל',
+    'a11y.on': 'פעיל',
+    'a11y.off': 'כבוי',
   },
 
   en: {
@@ -135,6 +148,19 @@ const translations = {
     'contact.phone': '052-2056000',
     'contact.whatsapp': 'Send WhatsApp Message',
     'contact.copyright': '© 2026 Ilan Property Management. All rights reserved.',
+
+    // Accessibility widget
+    'a11y.open': 'Open accessibility options',
+    'a11y.close': 'Close accessibility panel',
+    'a11y.title': 'Accessibility',
+    'a11y.textSize': 'Text Size',
+    'a11y.highContrast': 'High Contrast',
+    'a11y.grayscale': 'Grayscale',
+    'a11y.underlineLinks': 'Underline Links',
+    'a11y.pauseAnimations': 'Pause Animations',
+    'a11y.reset': 'Reset All',
+    'a11y.on': 'On',
+    'a11y.off': 'Off',
   },
 
   ru: {
@@ -199,6 +225,19 @@ const translations = {
     'contact.phone': '052-2056000',
     'contact.whatsapp': 'Написать в WhatsApp',
     'contact.copyright': '© 2026 Илан — Управление Недвижимостью. Все права защищены.',
+
+    // Accessibility widget
+    'a11y.open': 'Открыть настройки доступности',
+    'a11y.close': 'Закрыть панель доступности',
+    'a11y.title': 'Доступность',
+    'a11y.textSize': 'Размер текста',
+    'a11y.highContrast': 'Высокий контраст',
+    'a11y.grayscale': 'Оттенки серого',
+    'a11y.underlineLinks': 'Подчеркнуть ссылки',
+    'a11y.pauseAnimations': 'Стоп анимации',
+    'a11y.reset': 'Сбросить',
+    'a11y.on': 'Вкл',
+    'a11y.off': 'Выкл',
   },
 } as const
 

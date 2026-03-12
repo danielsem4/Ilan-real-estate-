@@ -44,3 +44,70 @@ body {
 [dir="ltr"] body {
   font-family: var(--font-inter);
 }
+
+/* Skip to content link — visible on focus only */
+.skip-to-content {
+  position: absolute;
+  top: -9999px;
+  inset-inline-start: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.25rem;
+  background: #0f2052;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+.skip-to-content:focus {
+  top: 1rem;
+}
+
+/* Keyboard focus ring — applies only for keyboard navigation */
+:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Remove default focus ring for mouse/touch users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* === Accessibility widget modes === */
+
+/* Font scaling — applied to <html> so rem-based sizes cascade */
+html.a11y-large-text { font-size: 112%; }
+html.a11y-xl-text    { font-size: 125%; }
+
+/* High contrast — filter on html is safe; fixed descendants stay viewport-relative */
+html.a11y-high-contrast { filter: contrast(165%); }
+
+/* Grayscale */
+html.a11y-grayscale { filter: grayscale(100%); }
+
+/* Combined */
+html.a11y-high-contrast.a11y-grayscale { filter: grayscale(100%) contrast(165%); }
+
+/* Underline all links */
+html.a11y-underline-links a { text-decoration: underline !important; }
+
+/* Pause CSS animations & transitions (JS-driven Framer Motion uses its own clock) */
+html.a11y-pause-animations *,
+html.a11y-pause-animations *::before,
+html.a11y-pause-animations *::after {
+  animation-play-state: paused !important;
+  transition-duration: 0.01ms !important;
+}

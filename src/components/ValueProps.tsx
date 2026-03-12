@@ -85,7 +85,7 @@ export default function ValueProps() {
                   {t(card.badgeKey)}
                 </span>
 
-                <div className={`w-14 h-14 rounded-xl ${card.bg} flex items-center justify-center mb-5`}>
+                <div className={`w-14 h-14 rounded-xl ${card.bg} flex items-center justify-center mb-5`} aria-hidden="true">
                   <Icon size={28} className={card.color} />
                 </div>
 

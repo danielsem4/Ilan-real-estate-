@@ -30,9 +30,10 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
               <a
                 href="tel:0522056000"
+                aria-label={`${t('hero.cta')} — 052-2056000`}
                 className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-4 rounded-xl transition-colors min-h-[52px] text-base shadow-lg shadow-amber-500/25"
               >
-                <PhoneCall size={20} />
+                <PhoneCall size={20} aria-hidden="true" />
                 {t('hero.cta')}
               </a>
             </div>

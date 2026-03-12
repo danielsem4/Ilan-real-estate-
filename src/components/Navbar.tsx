@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Menu,
@@ -43,6 +43,18 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handler)
   }, [langOpen])
 
+  // Close dropdown/drawer on Escape key
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setLangOpen(false)
+      setMobileOpen(false)
+    }
+  }, [])
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [handleKeyDown])
+
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-navy-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -68,15 +80,20 @@ export default function Navbar() {
             <div className="relative" ref={langRef}>
               <button
                 onClick={() => setLangOpen(!langOpen)}
+                aria-expanded={langOpen}
+                aria-haspopup="listbox"
+                aria-label={`Select language, current: ${languageNames[language]}`}
                 className="flex items-center gap-1.5 text-navy-600 hover:text-amber-600 transition-colors min-h-[44px] px-2 cursor-pointer"
               >
-                <Globe size={18} />
+                <Globe size={18} aria-hidden="true" />
                 <span className="text-sm">{languageNames[language]}</span>
-                <ChevronDown size={14} />
+                <ChevronDown size={14} aria-hidden="true" />
               </button>
               <AnimatePresence>
                 {langOpen && (
-                  <motion.div
+                  <motion.ul
+                    role="listbox"
+                    aria-label="Select language"
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
@@ -84,22 +101,23 @@ export default function Navbar() {
                     className="absolute top-full mt-1 end-0 bg-white rounded-lg shadow-lg border border-navy-100 overflow-hidden min-w-[140px]"
                   >
                     {languages.map((lang) => (
-                      <button
-                        key={lang}
-                        onClick={() => {
-                          setLanguage(lang)
-                          setLangOpen(false)
-                        }}
-                        className={`block w-full text-start px-4 py-3 text-sm transition-colors cursor-pointer ${
-                          lang === language
-                            ? 'bg-navy-50 text-navy-700 font-semibold'
-                            : 'text-navy-600 hover:bg-navy-50'
-                        }`}
-                      >
-                        {languageNames[lang]}
-                      </button>
+                      <li key={lang} role="option" aria-selected={lang === language}>
+                        <button
+                          onClick={() => {
+                            setLanguage(lang)
+                            setLangOpen(false)
+                          }}
+                          className={`block w-full text-start px-4 py-3 text-sm transition-colors cursor-pointer ${
+                            lang === language
+                              ? 'bg-navy-50 text-navy-700 font-semibold'
+                              : 'text-navy-600 hover:bg-navy-50'
+                          }`}
+                        >
+                          {languageNames[lang]}
+                        </button>
+                      </li>
                     ))}
-                  </motion.div>
+                  </motion.ul>
                 )}
               </AnimatePresence>
             </div>
@@ -109,7 +127,7 @@ export default function Navbar() {
               href="tel:0522056000"
               className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors min-h-[44px]"
             >
-              <Phone size={16} />
+              <Phone size={16} aria-hidden="true" />
               {t('nav.callNow')}
             </a>
           </div>
@@ -119,16 +137,18 @@ export default function Navbar() {
             <a
               href="tel:0522056000"
               className="flex items-center justify-center w-11 h-11 rounded-lg bg-amber-500 text-white"
-              aria-label="Call"
+              aria-label={t('nav.callNow')}
             >
-              <Phone size={20} />
+              <Phone size={20} aria-hidden="true" />
             </a>
             <button
               onClick={() => setMobileOpen(true)}
               className="flex items-center justify-center w-11 h-11 rounded-lg text-navy-700 cursor-pointer"
               aria-label="Open menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-drawer"
             >
-              <Menu size={24} />
+              <Menu size={24} aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -146,6 +166,10 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
             />
             <motion.div
+              id="mobile-drawer"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Navigation menu"
               initial={{ x: isRtl ? '-0%' : '100%' }}
               animate={{ x: 0 }}
               exit={{ x: isRtl ? '-100%' : '100%' }}
@@ -159,7 +183,7 @@ export default function Navbar() {
                   className="w-11 h-11 flex items-center justify-center cursor-pointer"
                   aria-label="Close menu"
                 >
-                  <X size={24} className="text-navy-700" />
+                  <X size={24} aria-hidden="true" className="text-navy-700" />
                 </button>
               </div>
 
@@ -201,7 +225,7 @@ export default function Navbar() {
                   href="tel:0522056000"
                   className="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-3 rounded-lg transition-colors min-h-[44px] w-full"
                 >
-                  <Phone size={18} />
+                  <Phone size={18} aria-hidden="true" />
                   {t('nav.callNow')}
                 </a>
               </div>
